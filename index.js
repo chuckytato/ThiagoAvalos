@@ -1,4 +1,3 @@
-// --- Funciones para controlar las animaciones de la terminal ---
 
 let isMatrixRunning = false;
 let isTypingRunning = false;
@@ -121,7 +120,6 @@ function stopTypingEffect() {
   isTypingRunning = false;
 }
 
-// --- Lógica de control con Intersection Observer ---
 
 const heroSection = document.getElementById('home');
 if (heroSection) {
@@ -136,11 +134,9 @@ if (heroSection) {
       if (entry.target.id === 'home') {
         if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
           startTypingEffect();
-          // Añade esta línea para iniciar la matrix 👈
           startMatrixEffect();
         } else {
           stopTypingEffect();
-          // Añade esta línea para detener la matrix 👈
           stopMatrixEffect();
         }
       }
@@ -150,7 +146,6 @@ if (heroSection) {
   observer.observe(heroSection);
 }
 
-// --- Otras funciones de animación y utilidades ---
 
 function animateCounters() {
   const counters = document.querySelectorAll('.counter');
@@ -232,7 +227,6 @@ function setupEasterEggs() {
   });
 }
 
-// Smooth scrolling para enlaces de ancla
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
@@ -246,7 +240,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Efecto de parallax sutil
 let ticking = false;
 window.addEventListener('scroll', () => {
   if (!ticking) {
@@ -265,7 +258,6 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Tarjetas de habilidades mejoradas
 document.querySelectorAll('.skill-card').forEach(card => {
   let tooltip = null;
   let progressAnimated = false;
@@ -314,7 +306,6 @@ document.querySelectorAll('.skill-card').forEach(card => {
   });
 });
 
-// Inicializar todo al cargar el DOM
 document.addEventListener('DOMContentLoaded', () => {
   animateCounters();
   setupNavigationDots();
