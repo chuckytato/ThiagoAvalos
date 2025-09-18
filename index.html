@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -610,27 +611,27 @@
       </div>
 
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-        <div class="skill-card" data-aos="zoom-in" data-aos-delay="0" data-skill="HTML5" data-level="95">
+        <div class="skill-card group" data-aos="zoom-in" data-aos-delay="0" data-skill="HTML5" data-level="95">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
-          <span class="font-semibold text-slate-700 group-hover:text-orange-600 transition-colors">HTML5</span>
+          <span class="font-semibold text-slate-700 group-hover:text-orange-600 transition-colors duration-200">HTML5</span>
+          <div class="skill-bar mt-2 w-full bg-gray-200 rounded-full h-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+            <div class="bg-orange-500 h-1.5 rounded-full transition-all duration-500 ease-out" style="width: 95%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card group" data-aos="zoom-in" data-aos-delay="50" data-skill="CSS3" data-level="90">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+          <span class="font-semibold text-slate-700 group-hover:text-blue-600 transition-colors duration-200">CSS3</span>
+          <div class="skill-bar mt-2 w-full bg-gray-200 rounded-full h-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+            <div class="bg-blue-500 h-1.5 rounded-full transition-all duration-500 ease-out" style="width: 90%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card group" data-aos="zoom-in" data-aos-delay="100" data-skill="JavaScript" data-level="88">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+          <span class="font-semibold text-slate-700 group-hover:text-yellow-600 transition-colors duration-200">JavaScript</span>
           <div class="skill-bar mt-2 w-full bg-gray-200 rounded-full h-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
             <div class="bg-yellow-500 h-1.5 rounded-full transition-all duration-500 ease-out" style="width: 88%"></div>
-          </div>
-        </div>
-
-        <div class="skill-card group" data-aos="zoom-in" data-aos-delay="150" data-skill="Node.js" data-level="85">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
-          <span class="font-semibold text-slate-700 group-hover:text-green-600 transition-colors duration-200">Node.js</span>
-          <div class="skill-bar mt-2 w-full bg-gray-200 rounded-full h-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-            <div class="bg-green-500 h-1.5 rounded-full transition-all duration-500 ease-out" style="width: 85%"></div>
-          </div>
-        </div>
-
-        <div class="skill-card group" data-aos="zoom-in" data-aos-delay="200" data-skill="Express.js" data-level="82">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js">
-          <span class="font-semibold text-slate-700 group-hover:text-gray-600 transition-colors duration-200">Express.js</span>
-          <div class="skill-bar mt-2 w-full bg-gray-200 rounded-full h-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-            <div class="bg-gray-500 h-1.5 rounded-full transition-all duration-500 ease-out" style="width: 82%"></div>
           </div>
         </div>
 
@@ -757,9 +758,9 @@
               </div>
             </div>
             
-            <div class="flex gap-3">
+            <div class="flex">
               <a href="https://github.com/chuckytato/kiosko-virtual" target="_blank"
-                class="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold py-3 px-6 rounded-xl hover:shadow-lg transition-all duration-300 group">
+                class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold py-3 px-6 rounded-xl hover:shadow-lg transition-all duration-300 group">
                 <span class="text-lg">⚡</span>
                 <span>Ver Código</span>
                 <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
@@ -802,12 +803,11 @@
               </div>
             </div>
             
-            <div class="flex gap-3">
-              <div class="flex-1 inline-flex items-center justify-center gap-2 text-slate-500 font-semibold py-3 px-6 rounded-xl border-2 border-slate-200 cursor-not-allowed">
-                <span class="text-lg">🔒</span>
-                <span>Repositorio Privado</span>
-              </div>
-            </div>
+            <a href="#" 
+               class="w-full inline-flex items-center justify-center gap-2 text-slate-500 font-semibold py-3 px-6 rounded-xl border-2 border-slate-200 cursor-not-allowed">
+              <span class="text-lg">🔒</span>
+              <span>Repositorio Privado</span>
+            </a>
           </div>
         </div>
       </div>
@@ -1238,27 +1238,20 @@
       let messageIndex = 0;
       const typingElement = document.getElementById('typingText');
       let typingInterval = null;
+      let isHeroVisible = false;
       
       function typeMessage() {
-        if (!typingElement) return;
+        if (!typingElement || !isHeroVisible) return;
         
-        // Check if hero section is visible
-        const heroSection = document.getElementById('home');
-        if (!heroSection) return;
-        
-        const rect = heroSection.getBoundingClientRect();
-        const isVisible = rect.bottom > 0 && rect.top < window.innerHeight;
-        
-        if (isVisible) {
-          const message = messages[messageIndex];
-          typingElement.textContent = message;
-          messageIndex = (messageIndex + 1) % messages.length;
-        }
+        const message = messages[messageIndex];
+        typingElement.textContent = message;
+        messageIndex = (messageIndex + 1) % messages.length;
       }
       
       // Start typing effect
       function startTyping() {
-        if (!typingInterval) {
+        if (!typingInterval && isHeroVisible) {
+          typeMessage(); // Set initial message
           typingInterval = setInterval(typeMessage, 4000);
         }
       }
@@ -1271,16 +1264,21 @@
         }
       }
       
-      // Monitor hero section visibility
+      // Monitor hero section visibility with stricter conditions
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
+          isHeroVisible = entry.isIntersecting && entry.intersectionRatio > 0.3;
+          
+          if (isHeroVisible) {
             startTyping();
           } else {
             stopTyping();
           }
         });
-      }, { threshold: 0.1 });
+      }, { 
+        threshold: [0.3], 
+        rootMargin: '-50px 0px -50px 0px' // Only trigger when well within viewport
+      });
       
       const heroSection = document.getElementById('home');
       if (heroSection) {
