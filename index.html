@@ -4,226 +4,606 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thiago Avalos Alejandro | Portafolio Developer</title>
+  <title>Thiago Avalos Alejandro | Full-Stack Developer</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #6366f1;
+      --secondary: #06b6d4;
+      --accent: #f59e0b;
+      --dark: #0f172a;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .code-font {
+      font-family: 'Fira Code', monospace;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-bg {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+    }
+
+    .floating {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
     }
 
     .skill-card {
-      @apply bg-white p-4 rounded-xl shadow-md text-center flex flex-col items-center justify-center hover:scale-105 transition-transform duration-300;
+      @apply bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-gray-200/50 text-center flex flex-col items-center justify-center hover:scale-110 hover:shadow-2xl transition-all duration-300 group;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     }
 
     .skill-card img {
-      width: 3rem;
-      height: 3rem;
-      margin: 0 auto 0.5rem auto;
+      width: 3.5rem;
+      height: 3.5rem;
+      margin: 0 auto 1rem auto;
       display: block;
+      transition: all 0.3s ease;
+    }
+
+    .skill-card:hover img {
+      transform: rotate(10deg) scale(1.1);
+    }
+
+    .project-card {
+      @apply bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 group border border-gray-100;
+      background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .glass-card {
+      @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-8;
+    }
+
+    .neon-glow {
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+    }
+
+    .neon-glow:hover {
+      box-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
+    }
+
+    .typing-animation {
+      border-right: 2px solid #f59e0b;
+      animation: typing 3s steps(20) infinite;
+    }
+
+    @keyframes typing {
+      0%, 50% { border-color: transparent; }
+      51%, 100% { border-color: #f59e0b; }
+    }
+
+    .section-divider {
+      background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), transparent);
+      height: 2px;
+      width: 100px;
+      margin: 2rem auto;
     }
   </style>
 </head>
 
-<body class="bg-gray-50 text-gray-800 antialiased">
+<body class="bg-slate-50 text-slate-800 antialiased">
 
-  <header class="bg-gradient-to-r from-blue-500 to-green-500 text-white py-24 px-4 text-center">
-    <div class="max-w-4xl mx-auto" data-aos="fade-up">
-      <h1 class="text-4xl md:text-5xl font-extrabold mb-2">Thiago Avalos Alejandro</h1>
-      <p class="text-lg md:text-xl font-light opacity-90 mb-6">Full-Stack Developer</p>
-      <div class="mt-6 flex flex-wrap justify-center gap-4">
+  <!-- Header -->
+  <header class="hero-bg text-white py-32 px-4 text-center relative">
+    <div class="absolute inset-0 bg-gradient-to-br from-indigo-600/90 to-purple-700/90"></div>
+    <div class="max-w-4xl mx-auto relative z-10" data-aos="fade-up">
+      <div class="floating">
+        <h1 class="text-5xl md:text-7xl font-bold mb-4">
+          <span class="code-font text-amber-300">&lt;</span>
+          Thiago Avalos
+          <span class="code-font text-amber-300">/&gt;</span>
+        </h1>
+      </div>
+      <div class="text-2xl md:text-3xl font-light mb-2 typing-animation">
+        Full-Stack Developer
+      </div>
+      <p class="text-lg md:text-xl opacity-90 mb-8 max-w-2xl mx-auto">
+        Transformando ideas en experiencias digitales extraordinarias
+      </p>
+      
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
         <a href="#proyectos"
-          class="bg-white text-blue-600 font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors">
-          Ver Proyectos
+          class="bg-white text-indigo-600 font-bold px-8 py-4 rounded-full shadow-xl hover:bg-gray-50 transition-all duration-300 neon-glow transform hover:scale-105">
+          Explorar Proyectos
         </a>
         <a href="#contacto"
-          class="bg-white text-blue-600 font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors">
-          Contacto
-        </a>
-
-        <a href="https://docs.google.com/document/d/e/2PACX-1vR0sN30vfBrtSwYGjfyvvNp48jXrpH8oqYJ7uHvFhN4p6Uo1eFYp-TrDTcIJFDP2k_IwdZtdxN1dc7g/pub" target="_blank"
-          class="flex items-center gap-2 bg-blue-600 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-          </svg>
-          Ver CV
-        </a>
-        <a href="https://docs.google.com/document/d/e/2PACX-1vR0sN30vfBrtSwYGjfyvvNp48jXrpH8oqYJ7uHvFhN4p6Uo1eFYp-TrDTcIJFDP2k_IwdZtdxN1dc7g/pub" download="CV_Thiago_Avalos.pdf"
-          class="flex items-center gap-2 border border-blue-600 text-blue-600 font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-blue-600 hover:text-white transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 16v4h16v-4M12 4v12m0 0l-4-4m4 4l4-4" />
-          </svg>
-          Descargar CV
+          class="border-2 border-white text-white font-bold px-8 py-4 rounded-full hover:bg-white hover:text-indigo-600 transition-all duration-300 transform hover:scale-105">
+          Hablemos
         </a>
       </div>
-      <div class="mt-8 flex justify-center gap-6 text-gray-200 text-sm">
+
+      <div class="mt-12 flex flex-wrap justify-center gap-6">
+        <a href="https://docs.google.com/document/d/e/2PACX-1vR0sN30vfBrtSwYGjfyvvNp48jXrpH8oqYJ7uHvFhN4p6Uo1eFYp-TrDTcIJFDP2k_IwdZtdxN1dc7g/pub" target="_blank"
+          class="glass-card text-white font-semibold hover:bg-white/20 transition-all duration-300 group">
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 group-hover:rotate-12 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+              <path fill-rule="evenodd" d="M4 5a2 2 0 012-2v1a1 1 0 001 1h6a1 1 0 001-1V3a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/>
+            </svg>
+            Ver CV
+          </div>
+        </a>
+        
         <a href="https://www.linkedin.com/in/thiago-avalos-dev" target="_blank"
-          class="hover:text-white transition-colors">LinkedIn</a>
-        <a href="https://github.com/chuckytato" target="_blank" class="hover:text-white transition-colors">GitHub</a>
-        <a href="mailto:thiagoaleavalos@gmail.com" class="hover:text-white transition-colors">Email</a>
+          class="glass-card text-white font-semibold hover:bg-white/20 transition-all duration-300 group">
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            LinkedIn
+          </div>
+        </a>
+        
+        <a href="https://github.com/chuckytato" target="_blank"
+          class="glass-card text-white font-semibold hover:bg-white/20 transition-all duration-300 group">
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 group-hover:rotate-12 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            GitHub
+          </div>
+        </a>
       </div>
     </div>
   </header>
 
-  <section id="sobre-mi" class="max-w-4xl mx-auto py-16 px-4" data-aos="fade-in">
-    <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Sobre Mí</h2>
-    <p class="text-center text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-      Soy un desarrollador full-stack apasionado por construir soluciones web desde cero. Mi enfoque se centra en la
-      arquitectura limpia y eficiente, creando experiencias de usuario impecables. Busco un rol donde pueda aplicar mi
-      experiencia en todo el ciclo de desarrollo y seguir aprendiendo en un equipo dinámico.
-    </p>
+  <!-- Sobre Mí -->
+  <section id="sobre-mi" class="max-w-6xl mx-auto py-24 px-4" data-aos="fade-in">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold gradient-text mb-4">Sobre Mí</h2>
+      <div class="section-divider"></div>
+    </div>
+    
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <p class="text-xl text-slate-600 leading-relaxed">
+          Soy un desarrollador full-stack apasionado por construir soluciones web desde cero. Mi enfoque se centra en la 
+          <span class="text-indigo-600 font-semibold">arquitectura limpia y eficiente</span>, creando experiencias de usuario impecables.
+        </p>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          Busco un rol donde pueda aplicar mi experiencia en todo el ciclo de desarrollo y seguir aprendiendo en un equipo dinámico.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <span class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium">Problem Solver</span>
+          <span class="px-4 py-2 bg-cyan-100 text-cyan-700 rounded-full text-sm font-medium">Team Player</span>
+          <span class="px-4 py-2 bg-amber-100 text-amber-700 rounded-full text-sm font-medium">Fast Learner</span>
+        </div>
+      </div>
+      
+      <div class="relative">
+        <div class="bg-gradient-to-br from-indigo-500 to-purple-600 p-8 rounded-2xl text-white shadow-2xl">
+          <div class="code-font text-sm opacity-75 mb-2">// Mi filosofía</div>
+          <div class="text-lg font-medium">
+            <span class="text-amber-300">const</span> <span class="text-blue-300">Programador</span> = {<br>
+            &nbsp;&nbsp;<span class="text-green-300">pasion</span>: <span class="text-yellow-300">"codear"</span>,<br>
+            &nbsp;&nbsp;<span class="text-green-300">pensando</span>: <span class="text-yellow-300">"experiencia del usuario"</span>,<br>
+            &nbsp;&nbsp;<span class="text-green-300">meta</span>: <span class="text-yellow-300">"solucion perfecta"</span><br>
+            };
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section id="habilidades" class="bg-gray-100 py-16 px-4">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl font-bold text-gray-800 mb-10 text-center" data-aos="fade-up">
-        Habilidades Técnicas
-      </h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 justify-items-center">
+  <!-- Habilidades -->
+  <section id="habilidades" class="bg-slate-100 py-24 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold gradient-text mb-4" data-aos="fade-up">
+          Skills
+        </h2>
+        <div class="section-divider"></div>
+        <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+          Herramientas y tecnologías que domino para crear experiencias digitales excepcionales
+        </p>
+      </div>
 
-        <div class="skill-card" data-aos="fade-up">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="0">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
-          HTML5
+          <span class="font-semibold text-slate-700 group-hover:text-orange-600 transition-colors">HTML5</span>
         </div>
 
-        <div class="skill-card" data-aos="fade-up" data-aos-delay="50">
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="50">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
-          CSS3
+          <span class="font-semibold text-slate-700 group-hover:text-blue-600 transition-colors">CSS3</span>
         </div>
 
-        <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-            alt="JavaScript">
-          JavaScript
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+          <span class="font-semibold text-slate-700 group-hover:text-yellow-600 transition-colors">JavaScript</span>
         </div>
 
-        <div class="skill-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="150">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
-          Node.js
+          <span class="font-semibold text-slate-700 group-hover:text-green-600 transition-colors">Node.js</span>
         </div>
 
-        <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js">
-          Express.js
+          <span class="font-semibold text-slate-700 group-hover:text-gray-600 transition-colors">Express.js</span>
         </div>
 
-        <div class="skill-card" data-aos="fade-up" data-aos-delay="250">
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="250">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
-          MySQL
+          <span class="font-semibold text-slate-700 group-hover:text-orange-600 transition-colors">MySQL</span>
         </div>
 
-        <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#">
-          C#
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C">
+          <span class="font-semibold text-slate-700 group-hover:text-purple-600 transition-colors">C</span>
         </div>
 
-        <div class="skill-card" data-aos="fade-up" data-aos-delay="350">
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="350">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino">
-          Arduino
+          <span class="font-semibold text-slate-700 group-hover:text-teal-600 transition-colors">Arduino</span>
         </div>
 
-        <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
           <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="TailwindCSS">
-          TailwindCSS
+          <span class="font-semibold text-slate-700 group-hover:text-cyan-600 transition-colors">Tailwind</span>
         </div>
 
-        <div class="skill-card" data-aos="fade-up" data-aos-delay="450">
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="450">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
-          PHP
+          <span class="font-semibold text-slate-700 group-hover:text-indigo-600 transition-colors">PHP</span>
         </div>
 
-        <div class="skill-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="500">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg" alt="Prisma">
-          Prisma ORM
+          <span class="font-semibold text-slate-700 group-hover:text-slate-900 transition-colors">Prisma ORM</span>
         </div>
 
-        <div class="skill-card" data-aos="fade-up" data-aos-delay="550">
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="550">
           <img src="https://cdn-icons-png.flaticon.com/512/15/15874.png" alt="Responsive Design">
-          Responsividad
+          <span class="font-semibold text-slate-700 group-hover:text-green-600 transition-colors">Responsive</span>
         </div>
-
       </div>
     </div>
   </section>
 
-  <section id="proyectos" class="bg-gray-100 py-16 px-4">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center" data-aos="fade-in">Proyectos Destacados</h2>
+  <!-- Proyectos -->
+  <section id="proyectos" class="py-24 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold gradient-text mb-4" data-aos="fade-in">Proyectos Destacados</h2>
+        <div class="section-divider"></div>
+        <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+          Soluciones innovadoras que combinan funcionalidad y diseño excepcional
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8">
+        <div class="project-card" data-aos="fade-up">
+          <div class="p-8">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                </svg>
+              </div>
+              <h3 class="font-bold text-2xl text-indigo-600">Kiosko Virtual Escolar</h3>
+            </div>
+            
+            <p class="text-slate-600 mb-4 leading-relaxed">
+              Aplicación completa para gestionar pedidos en un kiosko escolar que <span class="font-semibold text-slate-800">redujo las filas</span> y mejoró significativamente la experiencia de los estudiantes. Implementé el flujo completo de pagos con la API de Mercado Pago.
+            </p>
+            
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 bg-orange-100 text-orange-700 text-sm rounded-full font-medium">HTML</span>
+              <span class="px-3 py-1 bg-cyan-100 text-cyan-700 text-sm rounded-full font-medium">Tailwind</span>
+              <span class="px-3 py-1 bg-yellow-100 text-yellow-700 text-sm rounded-full font-medium">JavaScript</span>
+              <span class="px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full font-medium">Node.js</span>
+              <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full font-medium">MySQL</span>
+            </div>
+            
+            <a href="https://github.com/chuckytato/kiosko-virtual" target="_blank"
+              class="inline-flex items-center gap-2 text-indigo-600 font-semibold hover:text-indigo-700 transition-colors group">
+              <span>Ver en GitHub</span>
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="p-8">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <h3 class="font-bold text-2xl text-emerald-600">SASS</h3>
+            </div>
+            
+            <p class="text-slate-600 mb-4 leading-relaxed">
+              Sistema de Administración de Stock y Ventas que <span class="font-semibold text-slate-800">simplifica la gestión de inventario</span> y optimiza el flujo de caja para pequeñas empresas. Incluye seguimiento en tiempo real, gestión de productos y reportes automáticos.
+            </p>
+            
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 bg-orange-100 text-orange-700 text-sm rounded-full font-medium">HTML</span>
+              <span class="px-3 py-1 bg-cyan-100 text-cyan-700 text-sm rounded-full font-medium">Tailwind</span>
+              <span class="px-3 py-1 bg-yellow-100 text-yellow-700 text-sm rounded-full font-medium">JavaScript</span>
+              <span class="px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full font-medium">Node.js</span>
+              <span class="px-3 py-1 bg-indigo-100 text-indigo-700 text-sm rounded-full font-medium">PostgreSQL</span>
+            </div>
+            
+            <div class="inline-flex items-center gap-2 text-slate-500 font-semibold">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Repositorio Privado</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiencia -->
+  <section id="experiencia" class="bg-slate-100 py-24 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold gradient-text mb-4" data-aos="fade-in">Experiencia Profesional</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="space-y-8">
+        <div class="project-card" data-aos="fade-right">
+          <div class="p-8">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <h3 class="font-bold text-2xl text-indigo-600 mb-2 md:mb-0">Developer Full-Stack | Esencia Del Desierto</h3>
+              <span class="text-slate-500 font-medium px-4 py-1 bg-slate-200 rounded-full text-sm">Jun 2025 – Ago 2025</span>
+            </div>
+            <div class="space-y-3 text-slate-600">
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 bg-indigo-500 rounded-full mt-2 flex-shrink-0"></div>
+                <span>Plataforma e-commerce optimizada en UX y rendimiento</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 bg-indigo-500 rounded-full mt-2 flex-shrink-0"></div>
+                <span>APIs RESTful con Node.js para integración front-end/back-end</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 bg-indigo-500 rounded-full mt-2 flex-shrink-0"></div>
+                <span>Reducción del tiempo de carga en un 30% mediante optimización</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-right" data-aos-delay="100">
+          <div class="p-8">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <h3 class="font-bold text-2xl text-emerald-600 mb-2 md:mb-0">Developer Full-Stack | Escuela Secundaria N°19</h3>
+              <span class="text-slate-500 font-medium px-4 py-1 bg-slate-200 rounded-full text-sm">May 2025 – Sep 2025</span>
+            </div>
+            <div class="space-y-3 text-slate-600">
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
+                <span>Landing Page completa en HTML, CSS y JavaScript</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
+                <span>Corrección de errores y pruebas unitarias e integración</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Educación y Contacto -->
+  <section id="contacto" class="py-24 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold gradient-text mb-4" data-aos="fade-in">Educación y Contacto</h2>
+        <div class="section-divider"></div>
+      </div>
+
       <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up">
-          <h3 class="font-bold text-xl text-blue-600 mb-2">Kiosko Virtual Escolar</h3>
-          <p class="text-gray-700 mb-2">Participe en el desarrollo de una aplicación completa para gestionar pedidos en
-            un kiosko escolar, lo que redujo las filas y mejoró significativamente la experiencia de los estudiantes.
-            Gestioné todo el flujo de pagos con la API de Mercado Pago.</p>
-          <p class="text-sm text-gray-500 mb-4"><strong>Tecnologías:</strong> HTML, Tailwind, JS, Node, Express, MySQL,
-            Mercado Pago</p>
-          <a href="https://github.com/chuckytato/kiosko-virtual" target="_blank"
-            class="text-blue-600 font-semibold hover:underline">Ver en GitHub &rarr;</a>
+        <!-- Educación -->
+        <div class="project-card" data-aos="fade-up">
+          <div class="p-8">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-amber-600">Formación Académica</h3>
+            </div>
+            
+            <div class="space-y-6">
+              <div class="border-l-4 border-indigo-500 pl-6">
+                <h4 class="font-bold text-lg text-slate-800">Técnico en Programación</h4>
+                <p class="text-slate-600 mb-2">Escuela Secundaria Técnica N°4 de Berazategui</p>
+                <span class="text-sm text-indigo-600 font-semibold bg-indigo-100 px-3 py-1 rounded-full">2025</span>
+              </div>
+              
+              <div class="border-l-4 border-emerald-500 pl-6">
+                <h4 class="font-bold text-lg text-slate-800">Bootcamp Full Stack JavaScript</h4>
+                <p class="text-slate-600 mb-2">Coderhouse</p>
+                <span class="text-sm text-emerald-600 font-semibold bg-emerald-100 px-3 py-1 rounded-full">Cursando 2025</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
-          <h3 class="font-bold text-xl text-blue-600 mb-2">SASS</h3>
-          <p class="text-gray-700 mb-2">
-            Creé un Sistema de Administración de Stock y Ventas que simplifica la gestión de inventario y optimiza el
-            flujo de caja para pequeñas empresas. Desarrollé funcionalidades clave como el seguimiento de ventas en
-            tiempo real, la gestión de productos y la generación de reportes automáticos.
+
+        <!-- Contacto -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="p-8">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-purple-600">Hablemos</h3>
+            </div>
+            
+            <p class="text-slate-600 mb-8">
+              ¿Tienes un proyecto en mente? Me encantaría conocer más sobre tus ideas y cómo podemos trabajar juntos para hacerlas realidad.
+            </p>
+            
+            <div class="space-y-4">
+              <a href="mailto:thiagoaleavalos@gmail.com" 
+                 class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors group">
+                <div class="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-semibold text-slate-800">Email</p>
+                  <p class="text-slate-600 text-sm">thiagoaleavalos@gmail.com</p>
+                </div>
+              </a>
+              
+              <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl">
+                <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+                  <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-semibold text-slate-800">Ubicación</p>
+                  <p class="text-slate-600 text-sm">Buenos Aires, Argentina</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-8 p-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl text-white text-center">
+              <p class="font-semibold mb-2">¿Listo para crear algo increíble?</p>
+              <a href="mailto:thiagoaleavalos@gmail.com" 
+                 class="inline-block bg-white text-indigo-600 font-bold px-6 py-2 rounded-full hover:bg-gray-100 transition-colors">
+                Contactar Ahora
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-800 text-white py-12 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <p class="text-lg font-semibold code-font">
+            <span class="text-amber-400">&lt;</span>Thiago Avalos<span class="text-amber-400">/&gt;</span>
           </p>
-          <p class="text-sm text-gray-500 mb-4"><strong>Tecnologías:</strong> HTML, Tailwind, JS, Node, Express,
-            PostgreSQL</p>
-          <a href="#" class="text-gray-500 font-semibold">Repositorio privado &rarr;</a>
+          <p class="text-slate-400 text-sm mt-1">Full-Stack Developer</p>
+        </div>
+        
+        <div class="flex gap-6">
+          <a href="https://github.com/chuckytato" target="_blank" 
+             class="text-slate-400 hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/thiago-avalos-dev" target="_blank" 
+             class="text-slate-400 hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <a href="mailto:thiagoaleavalos@gmail.com" 
+             class="text-slate-400 hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+            </svg>
+          </a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section id="experiencia" class="max-w-4xl mx-auto py-16 px-4">
-    <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center" data-aos="fade-in">Experiencia Profesional</h2>
-    <div class="space-y-10">
-      <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-right">
-        <h3 class="font-bold text-xl text-blue-600">Developer Full-Stack | Esencia Del Desierto</h3>
-        <p class="text-sm text-gray-500 mb-4">Junio 2025 – Agosto 2025</p>
-        <ul class="list-disc list-inside text-gray-700 space-y-1">
-          <li>Plataforma e-commerce optimizada en UX y rendimiento.</li>
-          <li>APIs RESTful con Node.js para integración front-end/back-end.</li>
-          <li>Reducción del tiempo de carga en un 30% mediante optimización.</li>
-        </ul>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-right" data-aos-delay="100">
-        <h3 class="font-bold text-xl text-blue-600">Developer Full-Stack | Escuela Secundaria N°19</h3>
-        <p class="text-sm text-gray-500 mb-4">Mayo 2025 – Septiembre 2025</p>
-        <ul class="list-disc list-inside text-gray-700 space-y-1">
-          <li>Landing Page completa en HTML, CSS y JS.</li>
-          <li>Corrección de errores y pruebas unitarias e integración.</li>
-        </ul>
+      
+      <div class="border-t border-slate-700 mt-8 pt-8 text-center">
+        <p class="text-slate-400 text-sm">
+          © 2025 Thiago Avalos Alejandro. Diseñado y desarrollado con pasión.
+        </p>
       </div>
     </div>
-  </section>
-
-  <section id="contacto" class="max-w-4xl mx-auto py-16 px-4 text-center">
-    <h2 class="text-3xl font-bold text-gray-800 mb-8" data-aos="fade-in">Educación y Contacto</h2>
-    <div class="bg-white p-8 rounded-lg shadow-md" data-aos="fade-up">
-      <div class="space-y-4 text-gray-700 text-lg mb-6">
-        <p><strong>Técnico en Programación</strong> | Escuela Secundaria Técnica N°4 de Berazategui | 2025</p>
-        <p><strong>Bootcamp Full Stack JS</strong> | Coderhouse | Cursando 2025</p>
-      </div>
-      <div class="space-y-2 text-gray-600">
-        <p class="text-lg">📧 thiagoaleavalos@gmail.com</p>
-        <p class="text-lg">📱 +54 9 11 5706-7298</p>
-        <p class="text-lg">📍 Berazategui, Buenos Aires, Argentina</p>
-      </div>
-    </div>
-  </section>
-
-  <footer class="bg-gray-800 text-white py-6 px-4 text-center">
-    <p class="text-sm">© 2025 Thiago Avalos Alejandro.</p>
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 800, once: true, offset: 50 });
+    AOS.init({ 
+      duration: 800, 
+      once: true, 
+      offset: 50,
+      easing: 'ease-out-cubic'
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Add subtle parallax effect only to hero background
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const header = document.querySelector('header');
+      if (header && scrolled < window.innerHeight) {
+        // Only apply parallax while header is visible and much more subtle
+        header.style.transform = `translateY(${scrolled * 0.2}px)`;
+      }
+    });
   </script>
 
 </body>
