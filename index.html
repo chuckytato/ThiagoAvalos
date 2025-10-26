@@ -312,10 +312,10 @@
     </div>
   </section>
 
-  <section id="proyectos" class="py-24 px-4">
+ <section id="proyectos" class="py-24 px-4">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold gradient-text mb-4" data-aos="fade-in"> Proyectos Destacados</h2>
+        <h2 class="text-4xl font-bold gradient-text mb-4" data-aos="fade-in">Proyectos Destacados</h2>
         <div class="section-divider"></div>
         <p class="text-xl text-slate-600 max-w-2xl mx-auto">
           Cada proyecto es una oportunidad de crecimiento y aprendizaje
@@ -323,74 +323,105 @@
       </div>
 
       <div class="grid lg:grid-cols-2 gap-12 px-6">
-        <div class="project-card" data-aos="fade-up">
-          <div class="p-8">
+        <!-- Proyecto 1: Kiosco Virtual -->
+        <div class="project-card flex flex-col" data-aos="fade-up">
+          <div class="p-8 flex flex-col h-full">
             <div class="flex items-center gap-3 mb-4">
-              <div
-                class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
+              <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
                 <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+                  <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
                 </svg>
               </div>
               <div>
-                <h3 class="font-bold text-2xl text-indigo-600">Kiosko Virtual Escolar</h3>
+                <h3 class="font-bold text-2xl text-indigo-600">Kiosco Virtual Escolar</h3>
                 <div class="flex gap-2 mt-1">
-                  <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">✅ Completado</span>
-                  <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">🏆</span>
+                  <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full"> Completado</span>
+                  <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full"> PWA</span>
                 </div>
               </div>
             </div>
 
             <p class="text-slate-600 mb-4 leading-relaxed">
-              Desarrollé una aplicación que <span
-                class="font-semibold text-slate-800 bg-yellow-100 px-2 py-1 rounded">revolucionó</span>
-              la experiencia de compra en el kiosco escolar, <span class="font-semibold text-green-600">eliminando las
-                filas</span>
-              y mejorando la satisfacción estudiantil, con seguimiento en tiempo real de los pedidos. Implementé
-              el flujo completo de pagos con Mercado Pago.
+              <strong class="text-slate-800">PWA completa</strong> que revolucionó la experiencia de compra escolar con 
+              <span class="font-semibold text-indigo-600">sincronización en tiempo real mediante WebSockets</span>, 
+              eliminando filas y mejorando la satisfacción estudiantil.
             </p>
 
-            <div class="mb-6">
-              <h4 class="font-semibold text-slate-800 mb-2">🔧 Tecnologias:</h4>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="px-3 py-1 bg-gradient-to-r from-orange-100 to-red-100 text-orange-700 text-sm rounded-full font-medium hover:scale-105 transition-transform cursor-pointer">HTML5</span>
-                <span
-                  class="px-3 py-1 bg-gradient-to-r from-cyan-100 to-blue-100 text-cyan-700 text-sm rounded-full font-medium hover:scale-105 transition-transform cursor-pointer">TailwindCSS</span>
-                <span
-                  class="px-3 py-1 bg-gradient-to-r from-yellow-100 to-amber-100 text-yellow-700 text-sm rounded-full font-medium hover:scale-105 transition-transform cursor-pointer">JavaScript</span>
-                <span
-                  class="px-3 py-1 bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 text-sm rounded-full font-medium hover:scale-105 transition-transform cursor-pointer">Node.js</span>
-                <span
-                  class="px-3 py-1 bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 text-sm rounded-full font-medium hover:scale-105 transition-transform cursor-pointer">MySQL</span>
-                <span
-                  class="px-3 py-1 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 text-sm rounded-full font-medium hover:scale-105 transition-transform cursor-pointer">Mercado
-                  Pago</span>
+            <div class="mb-4">
+              <h4 class="font-semibold text-slate-800 mb-3 flex items-center gap-2">
+                <span class="text-lg"></span> Características Principales:
+              </h4>
+              <div class="space-y-2 text-sm text-slate-600">
+                <div class="flex items-start gap-2">
+                  <div class="w-1.5 h-1.5 bg-indigo-500 rounded-full mt-1.5 flex-shrink-0"></div>
+                  <span><strong>WebSockets:</strong> Sincronización instantánea de precios/stock y control dinámico</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <div class="w-1.5 h-1.5 bg-purple-500 rounded-full mt-1.5 flex-shrink-0"></div>
+                  <span><strong>Webhooks Mercado Pago:</strong> Validación de transacciones con Checkout Pro</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <div class="w-1.5 h-1.5 bg-green-500 rounded-full mt-1.5 flex-shrink-0"></div>
+                  <span><strong>Panel Admin:</strong> Reportes analíticos y comparativas de rendimiento</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <div class="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 flex-shrink-0"></div>
+                  <span><strong>Seguridad:</strong> Inicio de sesión por curso y múltiples capas</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <div class="w-1.5 h-1.5 bg-amber-500 rounded-full mt-1.5 flex-shrink-0"></div>
+                  <span><strong>Notificaciones Push:</strong> Alertas en tiempo real</span>
+                </div>
               </div>
             </div>
 
-            <div class="flex gap-3">
+            <div class="mb-4 p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg border border-green-200">
+              <h4 class="font-semibold text-slate-800 mb-2 flex items-center gap-2">
+                <span class="text-lg"></span> Impacto en Producción:
+              </h4>
+              <div class="grid grid-cols-2 gap-3 text-center">
+                <div>
+                  <div class="text-2xl font-bold text-green-600">+170</div>
+                  <div class="text-xs text-slate-600">Usuarios (1er mes)</div>
+                </div>
+                <div>
+                  <div class="text-2xl font-bold text-emerald-600">$70K</div>
+                  <div class="text-xs text-slate-600">ARS en 5 días</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <h4 class="font-semibold text-slate-800 mb-2"> Stack Tecnológico:</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-gradient-to-r from-orange-100 to-red-100 text-orange-700 text-sm rounded-full font-medium hover:scale-105 transition-transform cursor-pointer">HTML5</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-cyan-100 to-blue-100 text-cyan-700 text-sm rounded-full font-medium hover:scale-105 transition-transform cursor-pointer">TailwindCSS</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-yellow-100 to-amber-100 text-yellow-700 text-sm rounded-full font-medium hover:scale-105 transition-transform cursor-pointer">JavaScript</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 text-sm rounded-full font-medium hover:scale-105 transition-transform cursor-pointer">Node.js</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 text-sm rounded-full font-medium hover:scale-105 transition-transform cursor-pointer">MySQL</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 text-sm rounded-full font-medium hover:scale-105 transition-transform cursor-pointer">WebSockets</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-pink-100 to-rose-100 text-pink-700 text-sm rounded-full font-medium hover:scale-105 transition-transform cursor-pointer">Mercado Pago</span>
+              </div>
+            </div>
+
+            <div class="flex gap-3 mt-auto">
               <a href="https://manuel-aguirre-developer.github.io/KioskoVirtual-demolive/index.html" target="_blank"
                 class="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold py-3 px-6 rounded-xl hover:shadow-lg transition-all duration-300 group">
                 <span class="text-lg">⚡</span>
-                <span>Ver en Github</span>
-                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="currentColor"
-                  viewBox="0 0 20 20">
-                  <path fill-rule="evenodd"
-                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                    clip-rule="evenodd" />
+                <span>Ver Demo</span>
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
                 </svg>
               </a>
             </div>
           </div>
         </div>
 
-        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="p-8">
+        <!-- Proyecto 2: StockSell -->
+        <div class="project-card flex flex-col" data-aos="fade-up" data-aos-delay="100">
+          <div class="p-8 flex flex-col h-full">
             <div class="flex items-center gap-3 mb-4">
-              <div
-                class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
+              <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
                 <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -398,42 +429,79 @@
               <div>
                 <h3 class="font-bold text-2xl text-emerald-600">StockSell</h3>
                 <div class="flex gap-2 mt-1">
-                  <span class="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded-full">🔒 proceso</span>
-                  <span class="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full">🏢 Enterprise</span>
+                  <span class="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded-full"> En Desarrollo</span>
+                  <span class="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full"> Enterprise</span>
                 </div>
               </div>
             </div>
 
             <p class="text-slate-600 mb-4 leading-relaxed">
-              Sistema de Administración de Stock y Ventas que <span
-                class="font-semibold text-slate-800 bg-emerald-100 px-2 py-1 rounded">simplifica la gestión de
-                inventario</span>
-              y optimiza el flujo de caja para pequeñas empresas. Incluye seguimiento en tiempo real, gestión de
-              productos y generación de reportes automáticos.
-              <span class="easter-egg font-semibold text-emerald-600">¡Un verdadero game-changer para las PYMEs!</span>
-            </p>  
+              Sistema integral de <strong class="text-slate-800">Administración de Stock y Ventas</strong> que 
+              <span class="font-semibold text-emerald-600">simplifica la gestión de inventario</span> y optimiza 
+              el flujo de caja para pequeñas y medianas empresas.
+            </p>
 
-            <div class="mb-6">
-              <h4 class="font-semibold text-slate-800 mb-2">🛠️ Tecnologias:</h4>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="px-3 py-1 bg-gradient-to-r from-orange-100 to-red-100 text-orange-700 text-sm rounded-full font-medium hover:scale-105 transition-transform cursor-pointer">HTML5</span>
-                <span
-                  class="px-3 py-1 bg-gradient-to-r from-cyan-100 to-blue-100 text-cyan-700 text-sm rounded-full font-medium hover:scale-105 transition-transform cursor-pointer">TailwindCSS</span>
-                <span
-                  class="px-3 py-1 bg-gradient-to-r from-yellow-100 to-amber-100 text-yellow-700 text-sm rounded-full font-medium hover:scale-105 transition-transform cursor-pointer">JavaScript</span>
-                <span
-                  class="px-3 py-1 bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 text-sm rounded-full font-medium hover:scale-105 transition-transform cursor-pointer">Node.js</span>
-                <span
-                  class="px-3 py-1 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 text-sm rounded-full font-medium hover:scale-105 transition-transform cursor-pointer">MySQL</span>
+            <div class="mb-4">
+              <h4 class="font-semibold text-slate-800 mb-3 flex items-center gap-2">
+                <span class="text-lg"></span> Funcionalidades Clave:
+              </h4>
+              <div class="space-y-2 text-sm text-slate-600">
+                <div class="flex items-start gap-2">
+                  <div class="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-1.5 flex-shrink-0"></div>
+                  <span><strong>Tiempo Real:</strong> Seguimiento instantáneo de inventario y movimientos</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <div class="w-1.5 h-1.5 bg-teal-500 rounded-full mt-1.5 flex-shrink-0"></div>
+                  <span><strong>Gestión Completa:</strong> Control de productos, categorías y proveedores</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <div class="w-1.5 h-1.5 bg-cyan-500 rounded-full mt-1.5 flex-shrink-0"></div>
+                  <span><strong>Reportes Automáticos:</strong> Análisis de ventas y predicciones</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <div class="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 flex-shrink-0"></div>
+                  <span><strong>Optimización:</strong> Alertas de stock mínimo y reabastecimiento</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <div class="w-1.5 h-1.5 bg-indigo-500 rounded-full mt-1.5 flex-shrink-0"></div>
+                  <span><strong>Multi-usuario:</strong> Sistema de roles y permisos granulares</span>
+                </div>
               </div>
             </div>
-            <br>
-            <div class="flex gap-3">
-              <div
-                class="flex-1 inline-flex items-center justify-center gap-2 text-slate-500 font-semibold py-3 px-6 rounded-xl border-2 border-slate-200 cursor-not-allowed">
+
+            <div class="mb-4 p-4 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-lg border border-purple-200">
+              <h4 class="font-semibold text-slate-800 mb-2 flex items-center gap-2">
+                <span class="text-lg"></span> Objetivo del Proyecto:
+              </h4>
+              <div class="grid grid-cols-2 gap-3 text-center">
+                <div>
+                  <div class="text-2xl font-bold text-purple-600">PYMEs</div>
+                  <div class="text-xs text-slate-600">Enfoque principal</div>
+                </div>
+                <div>
+                  <div class="text-2xl font-bold text-indigo-600">100%</div>
+                  <div class="text-xs text-slate-600">Automatización</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <h4 class="font-semibold text-slate-800 mb-2"> Stack Tecnológico:</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-gradient-to-r from-orange-100 to-red-100 text-orange-700 text-sm rounded-full font-medium hover:scale-105 transition-transform cursor-pointer">HTML5</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-cyan-100 to-blue-100 text-cyan-700 text-sm rounded-full font-medium hover:scale-105 transition-transform cursor-pointer">TailwindCSS</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-yellow-100 to-amber-100 text-yellow-700 text-sm rounded-full font-medium hover:scale-105 transition-transform cursor-pointer">JavaScript</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 text-sm rounded-full font-medium hover:scale-105 transition-transform cursor-pointer">Node.js</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 text-sm rounded-full font-medium hover:scale-105 transition-transform cursor-pointer">MySQL</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-700 text-sm rounded-full font-medium hover:scale-105 transition-transform cursor-pointer">Express.js</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-emerald-100 to-teal-100 text-emerald-700 text-sm rounded-full font-medium hover:scale-105 transition-transform cursor-pointer">REST API</span>
+              </div>
+            </div>
+
+            <div class="flex gap-3 mt-auto">
+              <div class="flex-1 inline-flex items-center justify-center gap-2 text-slate-500 font-semibold py-3 px-6 rounded-xl border-2 border-slate-200 cursor-not-allowed">
                 <span class="text-lg">🔒</span>
-                <span>En Proceso</span>
+                <span>En Desarrollo</span>
               </div>
             </div>
           </div>
@@ -453,16 +521,16 @@
       </div>
 
       <div class="space-y-8">
+        <!-- Proyecto 1: Esencia del Desierto -->
         <div class="timeline-item project-card" data-aos="fade-right">
           <div class="p-8">
             <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
               <div>
-                <h3 class="font-bold text-2xl text-indigo-600 mb-2">Developer Full-Stack Freelance</h3>
+                <h3 class="font-bold text-2xl text-indigo-600 mb-2">Developer Full-Stack</h3>
                 <p class="text-lg text-slate-600 font-medium">Esencia Del Desierto</p>
               </div>
               <div class="flex gap-3 mt-4 lg:mt-0">
-                <span class="text-slate-500 font-medium px-4 py-2 bg-slate-200 rounded-full text-sm">Jun 2025 – Ago
-                  2025</span>
+                <span class="text-slate-500 font-medium px-4 py-2 bg-slate-200 rounded-full text-sm">Jun 2025 – Ago 2025</span>
                 <span class="text-green-600 font-medium px-4 py-2 bg-green-100 rounded-full text-sm">Completado</span>
               </div>
             </div>
@@ -470,43 +538,51 @@
             <div class="grid md:grid-cols-2 gap-6">
               <div>
                 <h4 class="font-semibold text-slate-800 mb-3 flex items-center gap-2">
-                  <span class="text-lg"></span> Logros Principales:
+                  <span class="text-lg">🚀</span> Logros Principales:
                 </h4>
                 <div class="space-y-3 text-slate-600">
                   <div class="flex items-start gap-3">
                     <div class="w-2 h-2 bg-indigo-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Plataforma e-commerce optimizada en UX y rendimiento</span>
+                    <span>Plataforma de catálogo con gestión dinámica de precios y stock mediante <strong>WebSockets</strong></span>
                   </div>
                   <div class="flex items-start gap-3">
                     <div class="w-2 h-2 bg-indigo-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>APIs RESTful robustas con Node.js</span>
+                    <span>Sistema full-stack que genera pedidos estructurados y los envía al vendedor vía <strong>WhatsApp Web API</strong></span>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-indigo-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>APIs RESTful y microservicios con Node.js</span>
                   </div>
                   <div class="flex items-start gap-3">
                     <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span><strong>30% mejora</strong> en tiempo de carga</span>
+                    <span><strong>30% reducción</strong> en tiempo de carga</span>
                   </div>
                 </div>
               </div>
 
               <div class="bg-slate-50 p-4 rounded-xl">
                 <h4 class="font-semibold text-slate-800 mb-2 flex items-center gap-2">
-                  <span class="text-lg"></span> Impacto:
+                  <span class="text-lg">📊</span> Impacto:
                 </h4>
-                <div class="text-3xl font-bold text-indigo-600 mb-1">+30%</div>
-                <div class="text-sm text-slate-600">Renderizado de la pagina</div>
+                <div class="text-3xl font-bold text-indigo-600 mb-1">-30%</div>
+                <div class="text-sm text-slate-600 mb-4">Tiempo de carga</div>
+                <div class="text-2xl font-bold text-purple-600 mb-1">100%</div>
+                <div class="text-sm text-slate-600">Automatización de pedidos</div>
               </div>
             </div>
+
             <div class="mt-6 pt-6 border-t border-slate-200">
-  <a href="https://esensiadeldesierto.com" target="_blank" class="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-semibold transition-colors group">
-    <span>Ver proyecto completo</span>
-    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-    </svg>
-  </a>
-</div>
+              <a href="https://esensiadeldesierto.com" target="_blank" class="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-semibold transition-colors group">
+                <span>Ver proyecto completo</span>
+                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
 
+        <!-- Proyecto 2: Escuela -->
         <div class="timeline-item project-card" data-aos="fade-right" data-aos-delay="100">
           <div class="p-8">
             <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
@@ -515,8 +591,7 @@
                 <p class="text-lg text-slate-600 font-medium">Escuela Secundaria N°19 de Berazategui</p>
               </div>
               <div class="flex gap-3 mt-4 lg:mt-0">
-                <span class="text-slate-500 font-medium px-4 py-2 bg-slate-200 rounded-full text-sm">May 2025 – Sep
-                  2025</span>
+                <span class="text-slate-500 font-medium px-4 py-2 bg-slate-200 rounded-full text-sm">May 2025 – Sep 2025</span>
                 <span class="text-blue-600 font-medium px-4 py-2 bg-blue-100 rounded-full text-sm">Completado</span>
               </div>
             </div>
@@ -524,36 +599,47 @@
             <div class="grid md:grid-cols-2 gap-6">
               <div>
                 <h4 class="font-semibold text-slate-800 mb-3 flex items-center gap-2">
-                  <span class="text-lg"></span> Responsabilidades:
+                  <span class="text-lg">💡</span> Responsabilidades:
                 </h4>
                 <div class="space-y-3 text-slate-600">
                   <div class="flex items-start gap-3">
                     <div class="w-2 h-2 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Diseñar la estructura de una Landing Page</span>
+                    <span>Lideré el desarrollo completo: <strong>diseño y UX desde cero</strong> (sin boceto previo)</span>
                   </div>
                   <div class="flex items-start gap-3">
                     <div class="w-2 h-2 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Aplicar tecnologías modernas y animaciones</span>
+                    <span>Integración de <strong>Google Maps API</strong> para localización</span>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Implementación de <strong>estrategias SEO</strong> para mejor visibilidad</span>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Aplicación de tecnologías modernas y animaciones</span>
                   </div>
                 </div>
               </div>
 
               <div class="bg-slate-50 p-4 rounded-xl">
                 <h4 class="font-semibold text-slate-800 mb-2 flex items-center gap-2">
-                  <span class="text-lg"></span> Resultado:
+                  <span class="text-lg">📈</span> Resultado:
                 </h4>
-                <div class="text-3xl font-bold text-emerald-600 mb-1">100%</div>
+                <div class="text-3xl font-bold text-emerald-600 mb-1">+47%</div>
+                <div class="text-sm text-slate-600 mb-4">Aumento en visualizaciones</div>
+                <div class="text-2xl font-bold text-blue-600 mb-1">100%</div>
                 <div class="text-sm text-slate-600">Satisfacción del cliente</div>
               </div>
             </div>
+
             <div class="mt-6 pt-6 border-t border-slate-200">
-  <a href="https://escuela19.netlify.app" target="_blank" class="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-semibold transition-colors group">
-    <span>Ver proyecto completo</span>
-    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-    </svg>
-  </a>
-</div>
+              <a href="https://escuela19.netlify.app" target="_blank" class="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-semibold transition-colors group">
+                <span>Ver proyecto completo</span>
+                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
